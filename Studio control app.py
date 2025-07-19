@@ -5,6 +5,7 @@ import os
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import threading
 import time
 
 class StudyTrackerApp:
@@ -475,7 +476,7 @@ class StudyTrackerApp:
         
         plt.tight_layout()
         
-        canvas = FigureCanvasTkinter(fig, frame)
+        canvas = FigureCanvasTkAgg(fig, frame)
         canvas.draw()
         canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
     
